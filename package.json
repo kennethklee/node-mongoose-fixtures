@@ -1,0 +1,31 @@
+{
+  "name": "node-mongoose-fixtures",
+  "version": "0.0.1",
+  "description": "Easy way to create mongoose fixtures.",
+  "main": "index.js",
+  "scripts": {
+    "test": "./node_modules/.bin/mocha -R spec"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/kennethklee/node-mongoose-fixtures.git"
+  },
+  "keywords": [
+    "mongoose",
+    "text",
+    "fixtures"
+  ],
+  "author": "Kenneth Lee <kennethkl@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kennethklee/node-mongoose-fixtures/issues"
+  },
+  "homepage": "https://github.com/kennethklee/node-mongoose-fixtures",
+  "dependencies": {
+    "async": "~0.2.10"
+  },
+  "devDependencies": {
+    "mongoose": "~3.8.8",
+    "mockgoose": "~1.7.7"
+  }
+}
