@@ -45,3 +45,17 @@ fixtures({
     ]
 });
 ```
+
+api
+---
+
+`fixtures(dataset, <mongoose instance>, <callback>);`
+
+`mongoose instance` is a singular instance of mongoose. This is typically initialized with the following:
+```
+var Mongoose = require('mongoose').Mongoose;
+
+var mongooseInstance = new Mongoose('mongodb://localhost/dbname');
+```
+
+`callback` is the callback function. It's parameters are callback(errors, data documents). Both arguments are arrays. The data documents are mongoose documents from the fixture data.
