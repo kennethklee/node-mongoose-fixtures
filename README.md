@@ -1,6 +1,8 @@
 node-mongoose-fixtures
 ======================
 
+[![Build Status](https://travis-ci.org/kennethklee/node-mongoose-fixtures.png?branch=master)](https://travis-ci.org/kennethklee/node-mongoose-fixtures)
+
 Create mongoose fixtures from a dataset.
 
 This will iteratively insert records through mongoose.
