@@ -48,4 +48,78 @@ describe('Fixtures', function() {
             });
         });
     });
+
+    it('should error when passing in a faulty dataset', function(done) {
+        fixtures('faulty!', mongoose, function(err, data) {
+            assert.ok(err);    // Error should exist
+            assert.equal('Dataset not a valid object.', err.message);
+
+            done();
+        });
+    });
+
+    it('should delete a particular model', function(done) {
+        var model = mongoose.model('tests');
+
+        model.find().exec(function(err, initialDocuments) {
+            assert.ok(initialDocuments.length);    // make sure documents exist
+
+            fixtures.reset('tests', mongoose, function(err) {
+                assert.ifError(err);
+
+                model.find().exec(function(err, finalDocuments) {
+                    assert.equal(0, finalDocuments.length);
+                    done();
+                });
+
+            });
+        });
+    });
+
+    it('should delete all models', function(done) {
+        var model = mongoose.model('tests'),
+            anotherModel = mongoose.model('another', new mongoose.Schema({
+                name: String
+            }));
+
+        anotherModel.create({
+            name: 'test'
+        }, function(err, doc) {
+            assert.ifError(err);
+            assert.ok(doc);
+
+            fixtures.reset(mongoose, function(err) {
+                assert.ifError(err);
+
+                model.count().exec(function(err, modelCount) {
+                    assert.equal(0, modelCount);
+
+                    anotherModel.count().exec(function(err, anotherModelCount) {
+                        assert.equal(0, anotherModelCount);
+                        done();
+                    });
+                });
+            });
+        });
+    });
+
+    it('should save a fixture and load it', function(done) {
+        fixtures.save('tests:one', {
+            tests: [
+                {name: 'one'},
+                {name: 'two'},
+                {name: 'three'},
+            ]
+        }, function() {
+            fixtures('tests:one', mongoose, function(err, data) {
+                assert.ifError(err);
+
+                assert.ok(data);
+                assert.ok(data.length);
+                done();
+            });
+        });
+
+
+    });
 });
