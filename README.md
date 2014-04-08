@@ -2,6 +2,7 @@ node-mongoose-fixtures
 ======================
 
 [![Build Status](https://travis-ci.org/kennethklee/node-mongoose-fixtures.svg?branch=master)](https://travis-ci.org/kennethklee/node-mongoose-fixtures)
+[![Code Climate](https://codeclimate.com/github/kennethklee/node-mongoose-fixtures.png)](https://codeclimate.com/github/kennethklee/node-mongoose-fixtures)
 
 Create mongoose fixtures from a dataset.
 
