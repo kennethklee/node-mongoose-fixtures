@@ -4,6 +4,7 @@
   "description": "Easy way to create mongoose fixtures.",
   "main": "index.js",
   "scripts": {
+    "pretest": "./node_modules/.bin/jshint *.js lib",
     "test": "./node_modules/.bin/mocha -R spec"
   },
   "repository": {
@@ -31,6 +32,7 @@
   "devDependencies": {
     "mongoose": "~3.8.8",
     "mockgoose": "~1.7.7",
-    "mocha": "~1.18.0"
+    "mocha": "~1.18.0",
+    "jshint": "~2.5.0"
   }
 }
