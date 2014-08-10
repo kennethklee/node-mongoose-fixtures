@@ -16,6 +16,10 @@ describe('Fixtures', function() {
             name: String
         }));
 
+        mongoose.model('others', new mongoose.Schema({
+            name: String
+        }));
+
         done();
     });
 
@@ -25,21 +29,25 @@ describe('Fixtures', function() {
                 {name: 'one'},
                 {name: 'two'},
                 {name: 'three'},
+            ],
+            others: [
+                {name: 'other'}
             ]
         }, mongoose, function(err, data) {
             assert.ifError(err);
 
-            assert.equal(3, data.length);
+            assert.equal(4, data.length);
             assert.equal('one', data[0].name);
             assert.equal('two', data[1].name);
             assert.equal('three', data[2].name);
+            assert.equal('other', data[3].name);
 
             // Just in case, let's super make sure it's within mongoose
             var model = mongoose.model('tests');
             model.find({}).exec(function(err, docs) {
                 assert.ifError(err);
 
-                assert.equal(3, data.length);
+                assert.equal(4, data.length);
                 assert.equal('one', docs[0].name);
                 assert.equal('two', docs[1].name);
                 assert.equal('three', docs[2].name);
