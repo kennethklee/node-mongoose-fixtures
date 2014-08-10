@@ -1,6 +1,6 @@
 {
   "name": "node-mongoose-fixtures",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Easy way to create mongoose fixtures.",
   "main": "index.js",
   "scripts": {
