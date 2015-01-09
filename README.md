@@ -33,8 +33,8 @@ fixtures({
 
 ```
 
-example
--------
+examples
+--------
 
 ```javascript
 var mongoose = require('mongoose'),
@@ -69,7 +69,7 @@ fixtures({
     // data is an array of all the documents created
 });
 
-// Pre-setup a dataset as a named fixture
+// Name a dataset for future use
 fixtures.save('users', {
     users: [
         {username: 'one', password: 'pass'},
@@ -77,7 +77,7 @@ fixtures.save('users', {
     ]
 });
 
-// Create a set of named fixtures
+// Use the named dataset
 fixtures('users', function(err, data) {
     // Again, data is an array of all documents created
 });
@@ -110,7 +110,7 @@ Save a fixture to be used for later.
 
 ### Retrieve a Named Fixture's Dataset
 
-`fixtures.get(name, <callback);`
+`fixtures.get(name, <callback>);`
 
 Retrieves a named fixture's dataset. If callback is omitted, this will simply return the named fixture's dataset.
 
