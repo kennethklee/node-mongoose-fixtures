@@ -137,3 +137,19 @@ Deletes all documents within a collection.
 * `model name` is optional. It's the name of the collection. If omitted, all collections will be purged.
 * `mongoose instance` is optional and is a singular instance of mongoose.
 * `callback` is an optional function when the action is complete. It's parameters are the same as the callback from `mongoose.Model.remove()`
+
+
+support
+-------
+
+Donations are welcome to help support the continuous development of this project.
+
+[![Flattr][flattr-image]][flattr-url]
+[![Bitcoin][bitcoin-image]][bitcoin-url]
+
+
+[flattr-url]: https://flattr.com/submit/auto?user_id=kennethkl&url=https://github.com/kennethklee/node-mongoose-fixtures&title=node-mongoose-fixtures&language=&tags=github&category=software
+[flattr-image]: http://img.shields.io/badge/flattr-donate-green.svg?style=flat-square
+
+[bitcoin-image]: http://img.shields.io/badge/bitcoin-1L9EhwhiSTPtEoXeGDBABRXmEJwovwkWpk-green.svg?style=flat-square
+[bitcoin-url]: https://www.coinbase.com/checkouts/5653371de64aa773f372a1e33c569095?name=node-mongoose-fixtures
